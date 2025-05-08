@@ -2,14 +2,35 @@ function toggleInputs() {
   const mode = document.getElementById('mode').value;
   const fullBookInputs = document.getElementById('full-book-inputs');
   const pageRangeInputs = document.getElementById('page-range-inputs');
+  const rangeLengthDiv = document.getElementById('range-length');
 
   if (mode === 'full') {
     fullBookInputs.classList.remove('hidden');
     pageRangeInputs.classList.add('hidden');
+    rangeLengthDiv.classList.add('hidden');
   } else {
     fullBookInputs.classList.add('hidden');
     pageRangeInputs.classList.remove('hidden');
+    rangeLengthDiv.classList.remove('hidden');
+    updateRangeLength();
   }
+}
+
+function updateRangeLength() {
+  const startPageInput = document.getElementById('start-page').value;
+  const endPageInput = document.getElementById('end-page').value;
+  const rangeLengthDiv = document.getElementById('range-length');
+
+  if (startPageInput && endPageInput) {
+    const startPage = parseInt(startPageInput, 10);
+    const endPage = parseInt(endPageInput, 10);
+    if (startPage <= endPage) {
+      const numPages = endPage - startPage + 1;
+      rangeLengthDiv.textContent = `Tanlangan sahifalar: ${numPages}`;
+      return;
+    }
+  }
+  rangeLengthDiv.textContent = '';
 }
 
 function calculateImposition() {
@@ -185,4 +206,9 @@ function copyToClipboard() {
   );
 }
 
-document.addEventListener('DOMContentLoaded', toggleInputs);
+// Initialize input visibility and event listeners
+document.addEventListener('DOMContentLoaded', () => {
+  toggleInputs();
+  document.getElementById('start-page').addEventListener('input', updateRangeLength);
+  document.getElementById('end-page').addEventListener('input', updateRangeLength);
+});
