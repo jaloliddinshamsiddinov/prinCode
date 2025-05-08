@@ -12,6 +12,17 @@
     <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
       <h1 class="text-xl font-bold mb-4 text-center">A6 va A5 Kitobcha Sahifalari Tartibi</h1>
       <div class="mb-4">
+        <label for="mode" class="block text-sm font-medium text-gray-700">Rejim</label>
+        <select
+          id="mode"
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          onchange="toggleInputs()"
+        >
+          <option value="full">To‘liq Kitob</option>
+          <option value="range">Sahifa Oralig‘i</option>
+        </select>
+      </div>
+      <div class="mb-4">
         <label for="format" class="block text-sm font-medium text-gray-700">Format</label>
         <select
           id="format"
@@ -21,13 +32,36 @@
           <option value="A5">A5</option>
         </select>
       </div>
-      <div class="mb-4">
+      <div id="full-book-inputs" class="mb-4">
         <label for="pages" class="block text-sm font-medium text-gray-700">Sahifalar Soni</label>
         <input
           type="number"
           id="pages"
           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           placeholder="Sahifalar sonini kiriting (masalan, 64)"
+        >
+      </div>
+      <div id="page-range-inputs" class="mb-4 hidden">
+        <label for="total-pages" class="block text-sm font-medium text-gray-700">Kitobning Umumiy Sahifalari</label>
+        <input
+          type="number"
+          id="total-pages"
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          placeholder="Umumiy sahifalar sonini kiriting (masalan, 168)"
+        >
+        <label for="start-page" class="block text-sm font-medium text-gray-700 mt-4">Boshlang‘ich Sahifa</label>
+        <input
+          type="number"
+          id="start-page"
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          placeholder="Boshlang‘ich sahifani kiriting (masalan, 80)"
+        >
+        <label for="end-page" class="block text-sm font-medium text-gray-700 mt-4">Oxirgi Sahifa</label>
+        <input
+          type="number"
+          id="end-page"
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          placeholder="Oxirgi sahifani kiriting (masalan, 83)"
         >
       </div>
       <button

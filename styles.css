@@ -1,28 +1,28 @@
 /* Additional custom styles */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Ensure hidden elements are not displayed */
-  .hidden {
-    display: none;
-  }
-  
-  /* ChatGPT-like copy button styles */
-  .copy-btn {
-    background: none;
-    border: none;
-    padding: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-  }
-  
-  .copy-btn:hover {
-    background-color: #f1f5f9;
-    border-radius: 4px;
-  }
-  
-  .copy-btn:active {
-    transform: scale(0.95);
-  }
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Ensure hidden elements are not displayed */
+.hidden {
+  display: none;
+}
+
+/* ChatGPT-like copy button styles */
+.copy-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.copy-btn:hover {
+  background-color: #f1f5f9;
+  border-radius: 4px;
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
+} 
