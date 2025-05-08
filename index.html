@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A6 va A5 Kitobcha Sahifalari Tartibi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
+      <h1 class="text-xl font-bold mb-4 text-center">A6 va A5 Kitobcha Sahifalari Tartibi</h1>
+      <div class="mb-4">
+        <label for="format" class="block text-sm font-medium text-gray-700">Format</label>
+        <select
+          id="format"
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        >
+          <option value="A6">A6</option>
+          <option value="A5">A5</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label for="pages" class="block text-sm font-medium text-gray-700">Sahifalar Soni</label>
+        <input
+          type="number"
+          id="pages"
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          placeholder="Sahifalar sonini kiriting (masalan, 64)"
+        >
+      </div>
+      <button
+        onclick="calculateImposition()"
+        class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      >
+        Tartibni Hisoblash
+      </button>
+      <div id="error" class="mt-4 text-red-600 text-center hidden"></div>
+      <div id="result" class="mt-4 hidden relative">
+        <h2 class="text-lg font-semibold">Sahifalar Tartibi:</h2>
+        <div class="relative">
+          <p id="result-text" class="mt-2 text-sm text-gray-600 break-words pr-8"></p>
+          <button onclick="copyToClipboard()" class="copy-btn absolute top-0 right-0">
+            <svg id="copy-icon" class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            <svg id="check-icon" class="w-5 h-5 text-green-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
