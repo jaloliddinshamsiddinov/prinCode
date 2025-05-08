@@ -40,6 +40,7 @@
           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           placeholder="Sahifalar sonini kiriting (masalan, 64)"
         >
+        <p class="mt-1 text-xs text-gray-500">Kitobning to‘liq sahifalar sonini kiriting (4 ga bo‘linadigan son).</p>
       </div>
       <div id="page-range-inputs" class="mb-4 hidden">
         <label for="total-pages" class="block text-sm font-medium text-gray-700">Kitobning Umumiy Sahifalari</label>
@@ -49,6 +50,7 @@
           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           placeholder="Umumiy sahifalar sonini kiriting (masalan, 168)"
         >
+        <p class="mt-1 text-xs text-gray-500">Kitobning umumiy sahifalari sahifa oralig‘ini tekshirish uchun kerak.</p>
         <label for="start-page" class="block text-sm font-medium text-gray-700 mt-4">Boshlang‘ich Sahifa</label>
         <input
           type="number"
@@ -63,7 +65,9 @@
           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           placeholder="Oxirgi sahifani kiriting (masalan, 83)"
         >
+        <p class="mt-1 text-xs text-gray-500">Boshlang‘ich va oxirgi sahifalar oralig‘i 4 ga bo‘linishi kerak.</p>
       </div>
+      <div id="range-length" class="mb-4 hidden text-sm text-gray-600"></div>
       <button
         onclick="calculateImposition()"
         class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
